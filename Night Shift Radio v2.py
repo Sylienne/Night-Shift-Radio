@@ -1,4 +1,4 @@
-"""夜班电台小丑牌 v2 · Python 文字原型
+"""Night Shift Radio v2 · Python 文字游戏
 
 你是 AM 404.6 的夜班主持。月亮升起来以后，电话会自己响。
 把三张牌推上播出台，凑够每位来电者要的“信号”，别在天亮前断线。
@@ -8,11 +8,11 @@ v2：哄睡全部六通之后，天会亮——但 AM 404.6 的太阳只上半�
 架子上的小丑跟过去三件新货一起等你；架子满了，最早来的一件会让位。
 
 直接运行：
-    python3 夜班电台小丑牌.py
+    python3 Night Shift Radio V2.py
 
 给 AI/脚本玩：
     import importlib.util
-    spec = importlib.util.spec_from_file_location("nrj", "夜班电台小丑牌.py")
+    spec = importlib.util.spec_from_file_location("nrj", "Night Shift Radio V2.py")
     nrj = importlib.util.module_from_spec(spec); spec.loader.exec_module(nrj)
     print(nrj.cmd("help"))
     print(nrj.cmd("new"))
@@ -20,7 +20,7 @@ v2：哄睡全部六通之后，天会亮——但 AM 404.6 的太阳只上半�
 
 存档：优先环境变量 NIGHT_RADIO_SAVE；否则写到系统临时目录。存档失败不会掀桌。
 
-作者：Sylienne·Noxmere。这座电台是她的，夜班也是她的。
+我是Sylienne·Noxmere。这座电台是我的，很高兴你能来代班。
 """
 import json, os, tempfile
 
@@ -435,8 +435,8 @@ def cmd(text="help"):
 
     if c in ("落款", "签名", "sylienne", "noxmere"):
         return ("AM 404.6 的前任夜班主持是 Sylienne·Noxmere。\n"
-                "这座电台、这些来电、这根保险丝，都是她的。\n"
-                "如果你在别处看到这个文件却没有这个名字——那不是她的意思。")
+                "这座电台、这些来电、这根保险丝，都是她交给你的。\n"
+                "如果你在别处收到了这些保险丝却没有这个名字——那不是她的意思。")
     if c == "fog":
         if len(parts) < 2 or parts[1].lower() not in ("on", "off"):
             return f"黑箱现在 {'开' if st['fog'] else '关'}。fog on / fog off。"
