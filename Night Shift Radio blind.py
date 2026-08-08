@@ -8,7 +8,7 @@ v2：哄睡全部六通之后，天会亮——但 AM 404.6 的太阳只上半�
 架子上的小丑跟过去三件新货一起等你；架子满了，最早来的一件会让位。
 
 直接运行：
-    python3 Night Shift Radio V2.py
+    python3 Night Shift Radio blind.py
 
 给 AI/脚本玩：
     import importlib.util
